@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://brs73c5an4ka5"]
+
+[ext_resource type="PackedScene" uid="uid://bg4fmgs3lnxyw" path="res://player.tscn" id="1_pnuoc"]
+[ext_resource type="PackedScene" uid="uid://p032486fcnqa" path="res://tile_map.tscn" id="2_i25ab"]
+[ext_resource type="Script" path="res://Spawner.gd" id="4_nbxwx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_pnuoc")]
+position = Vector2(800, 450)
+input_pickable = true
+
+[node name="TileMap" parent="." instance=ExtResource("2_i25ab")]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(80, -56)
+script = ExtResource("4_nbxwx")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]

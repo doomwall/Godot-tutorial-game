@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyjunayrn3tg7"]
+
+[ext_resource type="Texture2D" uid="uid://b7q12ccip7r3i" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/32x32/coin_01d.png" id="1_qq3qy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kkwtl"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 29.055
+initial_velocity_min = 43.31
+initial_velocity_max = 94.49
+gravity = Vector3(0, 98, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+position = Vector2(76, 58)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_kkwtl")
+texture = ExtResource("1_qq3qy")
+fixed_fps = 60

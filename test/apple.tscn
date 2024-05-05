@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://85xiu0n5c6io"]
+
+[ext_resource type="Texture2D" uid="uid://deorsseqlvxdu" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/fruit_01a.png" id="1_nypsq"]
+[ext_resource type="Script" path="res://apple.gd" id="2_kgurv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1757y"]
+radius = 7.07107
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_kgurv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nypsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_1757y")
